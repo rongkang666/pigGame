@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Pig Dice Game</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+      <style>
+          body{
+              
+              background-image: url(backgroundimage.jpg);
+              
+          }
+          .container{
+              
+              margin-top: 50px;
+              margin-bottom: 80px;    
+          }
+          #gameTitle{
+              
+              text-align: center;
+              margin-bottom: 50px;
+              word-spacing: 20px;
+              font-size: 50px;
+              color: forestgreen;
+              
+          }
+          
+          .palyerBoard{
+              
+              width:550px;
+              height:500px;
+              border:5px red solid;
+              border-radius: 20%;
+            
+            
+          }
+          
+          h3{
+              text-align: center;
+              margin: 10px;
+              
+          }
+          
+          .scoreBoard{
+              
+              border:3px solid black;
+              height:40%;
+              width:auto;
+              margin: 10px 20px;
+
+          }
+          
+          .score{
+              text-align: center;
+              font-size: 500%;
+              margin-top: 30px;
+              
+          }
+          
+          .nameArea{
+              
+              margin-left: 40px;
+              margin-top: 40px;
+              
+          }
+      
+          .btnRoll{
+              
+             height: 50px;
+             border: 3px solid blue;
+             margin-left: 5px;
+          }
+          
+          .rollArea{
+              
+              
+             margin-left: 30px;
+              margin-top: 20px;
+             
+              
+          }
+          
+          #diceSection{
+              
+              width: 90px;
+              height:90px;
+              position: relative;
+              left:15%;
+              border-radius: 15px;
+              border: 4px solid;
+              background: #fff;
+          }
+          #diceNum{
+              
+              text-align: center;
+              font-size: 55px;
+              color: coral
+          }
+          
+          .active{
+              
+              background-color: antiquewhite;
+              
+          }
+          
+          #instruction{
+              height:60px;
+              width: 80px;
+              border: 4px solid;
+              border-radius:25%;
+              margin-left:25px;
+              margin-top: 210px;
+              background: #fff;
+          }
+          
+          #instructionpara{
+              
+              font-size: 13px;
+              text-align: center;
+              margin: 14px auto;
+              
+          }
+          
+          #instruction:hover{
+              
+              cursor: pointer;
+              background-color: bisque;
+              border: 6px solid;
+              
+          }
+          #instructionpara:hover{
+              cursor: pointer;
+              color: dodgerblue;
+          }
+          #setscore{
+              
+              height:60px;
+              width: 80px;
+              border: 4px solid;
+              border-radius:25%;
+              margin-top: 18px;
+               margin-left:25px;
+              background: #fff;
+              
+          }
+          #setscorepara{
+              
+              text-align: center;
+              margin-top: 14px;
+              font-size: 15px;
+ 
+          }
+          #setscore:hover{
+              
+              cursor: pointer;
+              background-color: bisque;
+              border: 6px solid;
+              
+          }
+          #setscorepara:hover{
+              
+              cursor: pointer;
+              color: red;
+              
+          }
+          
+          
+          #restart{
+              
+              height:60px;
+              width: 80px;
+              border: 4px solid;
+              margin-left:25px;
+              margin-top: 15px;
+              border-radius:25%;
+              background: #fff;
+              
+          }
+          
+          #restart:hover{
+              
+              cursor: pointer;
+              background-color: bisque;
+              border: 6px solid;
+              
+          }
+          #restartpara{
+              
+              text-align: center;
+              margin-top: 12px;
+              
+          }
+          
+          #restartpara:hover{
+              
+              color: coral;
+              cursor:pointer;
+              
+          }
+          
+          footer{
+              
+              text-align: center;
+              margin-bottom: 30px;
+              color:aliceblue;
+              
+          }
+      
+      </style>
+    
+  </head>
+  <body>
+    <div class="container">
+        <h2 id="gameTitle">Pig Game</h2>
+      <div class="row">
+          <div class="col-sm-5 palyerBoard active" id="div1">
+            
+                  <h3 id="player-1-name">Player 1</h3>
+                  <div class="scoreBoard">
+                    <h2 class="score" id="score1">0</h2>
+                  </div>
+                 <div class="nameArea">
+                 <label>Name: </label>
+                  <input type="text" id="player1">
+                  <button class="btnConfirm" id="btn1">Confirm</button>
+                </div>
+                
+                 <div class="row rollArea">
+                  
+                     <button class="btnRoll col-sm-5" id="roll-1">Roll</button>
+                      
+                    
+                     <button class="btnRoll col-sm-5" id="hold-1">Hold</button>
+                  
+                  </div>
+              
+                </div>
+              
+ 
+          <div class="col-sm-2">
+            <div id="diceSection"><p id="diceNum">2<p></div>
+            <div id="instruction"><p id="instructionpara">Instruction</p></div>
+            <div id="setscore"><p id="setscorepara">Set score</p></div>
+            <div id="restart"><p id="restartpara">Restart</p></div>
+          </div>
+        
+          
+          
+          <div class="col-sm-5 palyerBoard" id="div2">
+             <h3 id="player-2-name">Player 2</h3>
+                  <div class="scoreBoard">
+                    <h2 class="score" id="score2">0</h2>
+                  </div>
+              
+              <div class="nameArea">
+                 <label>Name: </label>
+                  <input type="text" id="player2">
+                  <button class="btnConfirm" id="btn2">Confirm</button>
+                </div>
+                
+                 <div class="row rollArea">
+                  
+                     <button class="btnRoll col-sm-5" id="roll-2">Roll</button>
+                      
+                    
+                     <button class="btnRoll col-sm-5" id="hold-2">Hold</button>
+                  
+                  </div>
+              
+                </div>
+          
+          </div>
+          </div>
+        
+    
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+      <script src="javascript.js"></script>
+  </body>
+    <footer>
+    
+    &copy; 2017 Kang
+        
+    </footer>
+    
+    
+    
+</html>
